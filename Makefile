@@ -28,10 +28,10 @@ $(OMP_OUT): $(OMP_SRC)
 
 # MPI implementation
 $(MPI_OUT): $(MPI_SRC)
-	$(MPICC) $(CFLAGS) -o $(MPI_OUT) $(MPI_SRC)
+	$(MPICC) $(CFLAGS) -o $(MPI_OUT) $(MPI_SRC) -lm
 
 # Clean
 clean:
-	rm -f $(SERIAL_OUT) $(OMP_OUT) $(MPI_OUT) $(MPI2_OUT)
+	rm -f $(SERIAL_OUT) $(OMP_OUT) $(MPI_OUT)
 
 .PHONY: all clean
